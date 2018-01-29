@@ -85,7 +85,7 @@ void loop()
       if(urlLine.indexOf("GET / ") >= 0) // if the URL is only a "/"
       {
         // the content of the HTTP response follows the header:
-        client.println("Hello world!");
+        client.println("<!doctype html><html><head><script src=\"https://billynate.github.io/Instructable-Arduino-ESP-Remote-Config-Webpage/remote-conf.js\"></script></head><body></body></html>");
       }
       
       // The HTTP response ends with another blank line:
@@ -97,3 +97,4 @@ void loop()
     Serial.println("Client Disconnected.");
   }
 }
+
