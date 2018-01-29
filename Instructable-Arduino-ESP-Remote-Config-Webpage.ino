@@ -5,6 +5,8 @@ const char* password = "yourpasswd";
 
 WiFiServer server(80);
 
+int hi = 1;
+
 void setup()
 {
   //Initialize serial and wait for port to open:
@@ -86,6 +88,12 @@ void loop()
       {
         // the content of the HTTP response follows the header:
         client.println("<!doctype html><html><head><script src=\"https://billynate.github.io/Instructable-Arduino-ESP-Remote-Config-Webpage/remote-conf.js\"></script></head><body></body></html>");
+      }
+      else if(urlLine.indexOf("GET /ajax ") >= 0) // if the URL is "/ajax"
+      {
+        client.print("Hi! ");
+        client.println(hi);
+        hi ++; // increment the hi variable by one each time
       }
       
       // The HTTP response ends with another blank line:
