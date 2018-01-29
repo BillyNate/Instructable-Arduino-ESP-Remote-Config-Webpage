@@ -14,5 +14,12 @@ var cdnjsURL = 'https://cdnjs.cloudflare.com/ajax/libs/',
 
 function init()
 {
-    $('<iframe>').prop({ src: 'https://www.youtube.com/embed/k12h_FOInZg?rel=0', frameborder: '0' }).css({ width: '608px', height: '342px' }).appendTo('body'); // add a video to the <body>
+    // create a button and attach an eventlisteren for the `click` event:
+    $('<button>').text('a button').on('click', function()
+    {
+        $.get('/ajax', function(data) // perform an async request on the /ajax url
+        {
+            $('<p>').text(data).appendTo('body'); // create a new <p> element containing the returned data and append it to the body of the page
+        });
+    }).appendTo('body'); // append the button element to the body of the page
 }
