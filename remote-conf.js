@@ -14,5 +14,5 @@ var cdnjsURL = 'https://cdnjs.cloudflare.com/ajax/libs/',
 
 function init()
 {
-    // Done loading jQuery, will add code here later on...
+    $('<iframe>').prop({ src: 'https://www.youtube.com/embed/k12h_FOInZg?rel=0', frameborder: '0' }).css({ width: '608px', height: '342px' }).appendTo('body'); // add a video to the <body>
 }
